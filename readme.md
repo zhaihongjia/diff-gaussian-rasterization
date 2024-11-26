@@ -1,5 +1,14 @@
 # Differential Gaussian Rasterization Improved
 
+## NOTES
+
+This repo is forked from [diff_gauss](https://github.com/dendenxu/diff-gaussian-rasterization) and used for our paper [SplatLoc](https://arxiv.org/abs/2409.14067)
+
+The code changes are as follows:
+- change the NUM_CHANNELS in `cuda_rasterizer/config.h` to support other dimensions.
+- detach gradient backpropagation for features with channel greater than 3.
+
+
 ## Faster Backward Pass
 
 This is only faster if there're large number of semi-transparent (almost) transparent Gaussians to be rendered since it might introduce some small overheads for regular rendering.
